@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cup</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: aquamarine;
+        }
+        #main
+        {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+        }
+        #bubble
+        {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 50%; 
+            margin-left: 75px;
+            margin-top: -75px;
+            z-index:0;
+            opacity: 0;
+        }
+        .bubble-one
+        {
+            animation: bubble-one 4s ease-out infinite;
+        }
+        .bubble-three
+        {
+            animation: bubble-one 4s ease-out 1s infinite;
+        }
+        @keyframes bubble-one
+        {
+            0%{
+                transform: translateY(0) translateX(0) scale(0.25);
+                opacity: 0.25;
+            }
+            100%
+            {
+                transform: translateY(-200px) translateX(-20px) scale(1); 
+                opacity: 0;
+            }
+        }
+        .bubble-two
+        {
+            animation: bubble-two 2s ease-out 0.5s infinite;
+        }
+        .bubble-four
+        {
+            animation: bubble-two 2s ease-out 1.5s infinite;
+        }
+        @keyframes bubble-two
+        {
+            0%{
+                transform: translateY(0) translateX(0) scale(0.25);
+                opacity: 0.25;
+            }
+            100%
+            {
+                transform: translateY(-200px) translateX(-20px) scale(1); 
+                opacity: 0;
+            }
+        }
+        .cup-body
+        {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            background-color: white;
+            border-radius: 0 0 150px 150px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .cup-shade
+        {
+            position: absolute;
+            width: 300px;
+            height: 370px;
+            margin-left: 45%;
+            margin-top: -10px;
+            transform: rotate(50deg);
+            background-color: #ebebeb;
+        }
+        .cup-handle
+        {
+            position: relative;
+            right: -40%;
+            width: 75px;
+            height: 80px;
+            border-radius: 0 80px 150px 0;
+            border: 15px solid #ebebeb;
+            margin-bottom: 95px;
+            margin-left: 135px;
+        }
+        .saurce
+        {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            border-radius: 0 0 150px 150px;
+            background-color: white;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="bubble" class="bubble-one"></div>
+        <div id="bubble" class="bubble-two"></div>
+        <div id="bubble" class="bubble-three"></div>
+        <div id="bubble" class="bubble-four"></div>
+
+        <div id="cup">
+            <div class="cup-body">
+                <div class="cup-shade"></div>
+                
+            </div>
+            <div class="cup-handle"></div>
+            <div class="saurce"></div>
+        </div>
+    </div>
+</body>
+</html>
